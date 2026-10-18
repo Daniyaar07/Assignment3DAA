@@ -14,12 +14,16 @@ public class DSU {
         }
     }
     public int find(int x){
+        operations++;
+
         if(parent[x] != x){
             parent[x] = find(parent[x]);
         }
         return parent[x];
     }
     public boolean union(int a , int b){
+        operations++;
+        
         int rootA = find(a);
         int rootB = find(b);
 
